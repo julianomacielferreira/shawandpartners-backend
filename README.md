@@ -10,6 +10,10 @@
 A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications. 
 </p>
 
+## Requirements
+
+The specifications was taken from [https://shawandpartners.com/full-back-front-test/](https://shawandpartners.com/full-back-front-test/).
+
 ## 1 - [full-stack] [back-end]
 Create an API that will proxy all client requests to the appropriate GitHub endpoint. The following endpoints must be provided:
 
