@@ -48,6 +48,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+**And then access [http://localhost:3000](http://localhost:3000) on your browser.**
+
 ## Test
 
 ```bash
