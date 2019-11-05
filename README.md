@@ -1,5 +1,15 @@
 # Shaw and Partners Backend Test
 
+<p align="center">
+  <a href="http://nestjs.com/" target="blank">
+    <img src="http://kamilmysliwiec.com/public/nest-logo.png#1" alt="Nest Logo" />
+  </a>
+</p>
+
+<p align="center">
+A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications. 
+</p>
+
 ## 1 - [full-stack] [back-end]
 Create an API that will proxy all client requests to the appropriate GitHub endpoint. The following endpoints must be provided:
 
