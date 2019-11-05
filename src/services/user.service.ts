@@ -24,9 +24,4 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class AppService {
-
-  getMessage(): string {
-    return 'Use the API links at: /api/user';
-  }
-}
+export class UserService { }

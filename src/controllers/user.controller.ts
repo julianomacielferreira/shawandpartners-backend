@@ -21,12 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { Injectable } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { UserService } from '../services/user.service';
 
-@Injectable()
-export class AppService {
+@Controller('api/user')
+export class UserController {
 
-  getMessage(): string {
-    return 'Use the API links at: /api/user';
-  }
+    constructor(private readonly userService: UserService) { }
+
+    @Get()
+    index(): string {
+        return 'Return all users from github';
+    }
+
+    @Get(':username/details')
+    details(): string {
+        return 'Return user details from github';
+    }
 }
