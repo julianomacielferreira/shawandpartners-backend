@@ -17,6 +17,18 @@ Create tests for your application covering all endpoints.
 
 This project was generated with [Nest](https://github.com/nestjs/nest) framework.
 
+## Dependencies
+
+**Check if you have a recent version of [Node.js](https://nodejs.org/) (which comes bundled with [npm](https://www.npmjs.com/), a JavaScript package manager):**
+
+```bash
+$ node -v
+```
+
+```bash
+$ npm -v
+```
+
 ## Installation
 
 ```bash
