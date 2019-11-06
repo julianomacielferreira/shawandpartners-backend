@@ -34,6 +34,7 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get()
+    @Header('Access-Control-Allow-Origin', '*')
     async index(@Req() request: Request): Promise<any> {
 
         const since = request.query.since ? request.query.since : 5;
@@ -42,12 +43,14 @@ export class UserController {
     }
 
     @Get(':login/details')
+    @Header('Access-Control-Allow-Origin', '*')
     async details(@Param() params: any): Promise<any> {
 
         return this.userService.getUser(params.login);
     }
 
     @Get(':login/repos')
+    @Header('Access-Control-Allow-Origin', '*')
     async repos(@Param() params: any): Promise<any> {
 
         return this.userService.listUserRepositories(params.login);
