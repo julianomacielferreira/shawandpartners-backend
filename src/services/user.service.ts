@@ -23,5 +23,56 @@
  */
 import { Injectable } from '@nestjs/common';
 
+import { User } from '../models/user';
+import { Repository } from '../models/repository';
+
+// Axios library for HTTP requests
+import axios from 'axios';
+
 @Injectable()
-export class UserService { }
+export class UserService {
+
+    private readonly githubAPIUsersUrl = 'https://api.github.com/users';
+
+    public async listUsers(since: number): Promise<any> {
+
+        const githubUsersUrl = `${this.githubAPIUsersUrl}?since=${since}&per_page=5`;
+
+        const users: User[] = await axios.get(githubUsersUrl).then(response => {
+
+            return response.data;
+
+            // tslint:disable-next-line: no-console
+        }).catch(err => console.error(err));
+
+        return users;
+    }
+
+    public async getUser(login: string): Promise<any> {
+
+        const githubUserUrl = `${this.githubAPIUsersUrl}/${login}`;
+
+        const user: User = await axios.get(githubUserUrl).then(response => {
+
+            return response.data;
+
+            // tslint:disable-next-line: no-console
+        }).catch(err => console.error(err));
+
+        return user;
+    }
+
+    public async listUserRepositories(login: string): Promise<any> {
+
+        const githubUserReposUrl = `${this.githubAPIUsersUrl}/${login}/repos`;
+
+        const repositories: Repository[] = await axios.get(githubUserReposUrl).then(response => {
+
+            return response.data;
+
+            // tslint:disable-next-line: no-console
+        }).catch(err => console.error(err));
+
+        return repositories;
+    }
+}
