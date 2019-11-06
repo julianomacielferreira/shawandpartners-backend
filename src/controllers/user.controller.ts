@@ -21,8 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Req, Header } from '@nestjs/common';
 import { UserService } from '../services/user.service';
+import { Request } from 'express';
+
+// Axios library for HTTP requests
+import axios from 'axios';
 
 @Controller('api/user')
 export class UserController {
@@ -30,12 +34,22 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get()
-    index(): string {
-        return 'Return all users from github';
+    async index(@Req() request: Request): Promise<any> {
+
+        const since = request.query.since ? request.query.since : 5;
+
+        return this.userService.listUsers(since);
     }
 
-    @Get(':username/details')
-    details(): string {
-        return 'Return user details from github';
+    @Get(':login/details')
+    async details(@Param() params: any): Promise<any> {
+
+        return this.userService.getUser(params.login);
+    }
+
+    @Get(':login/repos')
+    async repos(@Param() params: any): Promise<any> {
+
+        return this.userService.listUserRepositories(params.login);
     }
 }
