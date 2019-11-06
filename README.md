@@ -92,6 +92,26 @@ $ npm run test:cov
 
 **Obs.: Not implemented.**
 
+## Running with Docker
+
+You must have [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+
+In the root project folder build the image and fire up the container:
+
+```bash
+$ docker-compose up -d --build
+```
+
+Open your browser to **http://localhost:3000** and you should see the backend. Try making a change to a controller within your code editor. You should see the backend compilation in watch mode. 
+
+Ensure the backend is running in the browser and test compilation in watch mode again. 
+
+Stop the container before moving on:
+
+```bash
+$ docker-compose stop
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
