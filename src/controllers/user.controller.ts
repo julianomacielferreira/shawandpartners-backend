@@ -28,7 +28,7 @@ import { Request } from 'express';
 // Axios library for HTTP requests
 import axios from 'axios';
 
-@Controller('api/user')
+@Controller('api/users')
 export class UserController {
 
     constructor(private readonly userService: UserService) { }
