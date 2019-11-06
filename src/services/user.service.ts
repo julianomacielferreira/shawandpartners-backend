@@ -34,7 +34,7 @@ export class UserService {
 
     private readonly githubAPIUsersUrl = 'https://api.github.com/users';
 
-    public async listUsers(since: number): Promise<any> {
+    public async listUsers(since: number): Promise<User[]> {
 
         const githubUsersUrl = `${this.githubAPIUsersUrl}?since=${since}&per_page=5`;
 
@@ -48,7 +48,7 @@ export class UserService {
         return users;
     }
 
-    public async getUser(login: string): Promise<any> {
+    public async getUser(login: string): Promise<User> {
 
         const githubUserUrl = `${this.githubAPIUsersUrl}/${login}`;
 
@@ -62,7 +62,7 @@ export class UserService {
         return user;
     }
 
-    public async listUserRepositories(login: string): Promise<any> {
+    public async listUserRepositories(login: string): Promise<Repository[]> {
 
         const githubUserReposUrl = `${this.githubAPIUsersUrl}/${login}/repos`;
 

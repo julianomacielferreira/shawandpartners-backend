@@ -25,6 +25,9 @@ import { Controller, Get, Param, Req, Header } from '@nestjs/common';
 import { UserService } from '../services/user.service';
 import { Request } from 'express';
 
+import { User } from '../models/user';
+import { Repository } from '../models/repository';
+
 // Axios library for HTTP requests
 import axios from 'axios';
 
@@ -35,7 +38,7 @@ export class UserController {
 
     @Get()
     @Header('Access-Control-Allow-Origin', '*')
-    async index(@Req() request: Request): Promise<any> {
+    public async index(@Req() request: Request): Promise<User[]> {
 
         const since = request.query.since ? request.query.since : 5;
 
@@ -44,14 +47,14 @@ export class UserController {
 
     @Get(':login/details')
     @Header('Access-Control-Allow-Origin', '*')
-    async details(@Param() params: any): Promise<any> {
+    public async details(@Param() params: any): Promise<User> {
 
         return this.userService.getUser(params.login);
     }
 
     @Get(':login/repos')
     @Header('Access-Control-Allow-Origin', '*')
-    async repos(@Param() params: any): Promise<any> {
+    public async repos(@Param() params: any): Promise<Repository[]> {
 
         return this.userService.listUserRepositories(params.login);
     }
