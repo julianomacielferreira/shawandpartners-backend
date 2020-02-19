@@ -10,20 +10,7 @@
 A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications. 
 </p>
 
-## Endpoints
-
-The endpoints that proxy the GitHub API:
-
-- GET - http://localhost:3000/api/users?since={number}
-This endpoint must return a list of GitHub users and the link for the next page.
-
-- GET - http://localhost:3000/api/users/:username/details
-This endpoint must return the details of a GitHub user
-
-- GET - http://localhost:3000/api/users/:username/repos
-This endpoint must return a list with all user repositories
-
-## Requirements
+# Requirements
 
 The specifications was taken from [https://shawandpartners.com/full-back-front-test/](https://shawandpartners.com/full-back-front-test/).
 
@@ -41,6 +28,19 @@ This endpoint must return a list with all user repositories
 
 ## 2 - [full-stack (optional)] [back-end]
 Create tests for your application covering all endpoints.
+
+# Endpoints
+
+The endpoints that proxy the GitHub API:
+
+- GET - http://localhost:3000/api/users?since={number}
+This endpoint must return a list of GitHub users and the link for the next page.
+
+- GET - http://localhost:3000/api/users/:username/details
+This endpoint must return the details of a GitHub user
+
+- GET - http://localhost:3000/api/users/:username/repos
+This endpoint must return a list with all user repositories
 
 This project was generated with [Nest](https://github.com/nestjs/nest) framework.
 
@@ -92,7 +92,7 @@ $ npm run test:cov
 
 **Obs.: Not implemented.**
 
-## Running with Docker
+# Running with Docker
 
 You must have [Docker](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
