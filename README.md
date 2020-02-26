@@ -31,15 +31,15 @@ Create tests for your application covering all endpoints.
 
 # Endpoints
 
-The endpoints that proxy the GitHub API:
+The endpoints that proxy the GitHub API (replace the params enclosed in {:param}):
 
-- GET - http://localhost:3000/api/users?since={number}
+- GET - http://localhost:3000/api/users?since={:number}
 This endpoint must return a list of GitHub users and the link for the next page.
 
-- GET - http://localhost:3000/api/users/:username/details
+- GET - http://localhost:3000/api/users/{:username}/details
 This endpoint must return the details of a GitHub user
 
-- GET - http://localhost:3000/api/users/:username/repos
+- GET - http://localhost:3000/api/users/{:username}/repos
 This endpoint must return a list with all user repositories
 
 This project was generated with [Nest](https://github.com/nestjs/nest) framework.
