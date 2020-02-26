@@ -124,6 +124,8 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 - Node.js: [https://nodejs.org/](https://nodejs.org/)
 
+- Axios - Promise based HTTP client for the browser and node.js: https://github.com/axios/axios](https://github.com/axios/axios)
+
 # License
 
 Please see the [license agreement](https://github.com/julianomacielferreira/shawandpartners-backend/blob/master/LICENSE).
